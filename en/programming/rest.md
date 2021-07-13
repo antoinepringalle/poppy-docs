@@ -880,6 +880,7 @@ Gets the ip of the robot.
     "ip": "10.2.11.54"
 }
 ```
+
 </details>
 
 ## ⚙ Motors
@@ -914,6 +915,50 @@ Gives the list of all Poppy's motors.
     <summary><b>Returned value</b></summary>
 
 On a Poppy Torso:
+<code class="lang-json">
+{
+    "motors":
+    [
+        "abs_z",
+        "bust_y",
+        "bust_x",
+        "head_z",
+        "head_y",
+        "l_shoulder_y",
+        "l_shoulder_x",
+        "l_arm_z",
+        "l_elbow_y",
+        "r_shoulder_y",
+        "r_shoulder_x",
+        "r_arm_z",
+        "r_elbow_y"
+    ]
+}
+</code>
+
+</details>
+
+<code class="lang-json">
+{
+    "motors":
+    [
+        "abs_z",
+        "bust_y",
+        "bust_x",
+        "head_z",
+        "head_y",
+        "l_shoulder_y",
+        "l_shoulder_x",
+        "l_arm_z",
+        "l_elbow_y",
+        "r_shoulder_y",
+        "r_shoulder_x",
+        "r_arm_z",
+        "r_elbow_y"
+    ]
+}
+</code>
+
 ```json
 {
     "motors":
@@ -934,9 +979,6 @@ On a Poppy Torso:
     ]
 }
 ```
-
-</details>
-
 - - -
 
 ### Getting the list of motor aliases
