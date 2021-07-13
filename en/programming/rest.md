@@ -46,7 +46,45 @@ Gives all endpoints of the REST API in an HTML format
 
 <b>Returned value</b>
 
-<b>All url paths availables:</b><br><b>Get method url:</b><br>/<br>/robot.json<br>/ip.json<br>/motors/list.json<br>/motors/aliases/list.json<br>/motors/<alias>/list.json<br>/motors/<motor_name>/registers/list.json<br>/motors/<motor_name>/registers/<register_name>/value.json<br>/motors/registers/<register_name>/list.json<br>/sensors/list.json<br>/sensors/<sensor_name>/registers/list.json<br>/sensors/<sensor_name>/registers/<register_name>/value.json<br>/records/list.json<br>/records/<move_name>/value.json<br>/primitives/list.json<br>/primitives/running/list.json<br>/primitives/<primitive_name>/start.json<br>/primitives/<primitive_name>/stop.json<br>/primitives/<primitive_name>/pause.json<br>/primitives/<primitive_name>/resume.json<br>/primitives/<primitive_name>/properties/list.json<br>/primitives/<primitive_name>/properties/<prop>/value.json<br>/primitives/<primitive_name>/methods/list.json<br><br><b>Post method url:</b><br>/motors/<motor_name>/registers/<register_name>/value.json<br>/motors/<motor_name>/goto.json<br>/motors/goto.json<br>/sensors/<sensor_name>/registers/<register_name>/value.json<br>/records/<move_name>/record.json<br>/records/<move_name>/save.json<br>/records/<move_name>/play.json<br>/records/<move_name>/stop.json<br>/records/<move_name>/delete.json<br>/primitives/<primitive_name>/properties/<prop>/value.json<br>/primitives/<primitive_name>/methods/<method_name>/args.json<br>
+```
+All url paths availables:
+
+Get method url:
+/robot.json
+/ip.json
+/motors/list.json
+/motors/aliases/list.json
+/motors/<alias>/list.json
+/motors/<motor_name>/registers/list.json
+/motors/<motor_name>/registers/<register_name>/value.json
+/motors/registers/<register_name>/list.json
+/sensors/list.json<br>/sensors/<sensor_name>/registers/list.json
+/sensors/<sensor_name>/registers/<register_name>/value.json
+/records/list.json
+/records/<move_name>/value.json
+/primitives/list.json
+/primitives/running/list.json
+/primitives/<primitive_name>/start.json
+/primitives/<primitive_name>/stop.json
+/primitives/<primitive_name>/pause.json
+/primitives/<primitive_name>/resume.json
+/primitives/<primitive_name>/properties/list.json
+/primitives/<primitive_name>/properties/<prop>/value.json
+/primitives/<primitive_name>/methods/list.json
+
+Post method url:
+/motors/<motor_name>/registers/<register_name>/value.json
+/motors/<motor_name>/goto.json
+/motors/goto.json
+/sensors/<sensor_name>/registers/<register_name>/value.json
+/records/<move_name>/record.json
+/records/<move_name>/save.json
+/records/<move_name>/play.json
+/records/<move_name>/stop.json
+/records/<move_name>/delete.json
+/primitives/<primitive_name>/properties/<prop>/value.json
+/primitives/<primitive_name>/methods/<method_name>/args.json
+```
 
 
 - - -
