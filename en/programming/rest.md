@@ -1,6 +1,6 @@
 # Pypot's REST API
 
-> **Caution** REST API has recently been updated. This page presents the documentation for the new API version (12/07/2021)
+> **Caution** REST API has been updated in v4.0.0. This page presents the documentation of the v4.0.0 API.
 
 The Pypot API is organized around [REST](https://en.wikipedia.org/wiki/Representational_state_transfer "Representational state transfer"). Our API has predictable resource-oriented URLs, accepts form-encoded request bodies, returns JSON-encoded responses, and uses standard HTTP response codes.
 
