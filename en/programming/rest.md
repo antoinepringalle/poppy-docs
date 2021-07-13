@@ -4,16 +4,6 @@
 
 The Pypot API is organized around [REST](https://en.wikipedia.org/wiki/Representational_state_transfer "Representational state transfer"). Our API has predictable resource-oriented URLs, accepts form-encoded request bodies, returns JSON-encoded responses, and uses standard HTTP response codes.
 
-# 📖 Summary
-
-1. [Errors](#errors)
-2. [Endpoints](#endpoints)
-    1. [Miscellaneous](#electric_plug-miscellaneous)
-    2. [Motors](#gear-motors)
-    3. [Sensors](#camera-sensors)
-    4. [Records](#mechanical_arm-records)
-    5. [Primitives](#robot-primitives)
-
 # Errors
 
 Pypot uses conventional HTTP response codes to indicate the success or failure of an API request. In general: Codes in the `2xx` range indicate success. Codes in the `4xx` range indicate an error that failed given the information provided (e.g., a required parameter was omitted, a charge failed, etc.). Codes in the `5xx` range indicate an error with Poppy's servers (these are rare).
