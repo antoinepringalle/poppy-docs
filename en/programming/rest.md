@@ -1,10 +1,10 @@
-# Pypot API
+# Pypot's REST API
 
 > **Caution** REST API has recently been updated. This page presents the documentation for the new API version (12/07/2021)
 
 The Pypot API is organized around [REST](https://en.wikipedia.org/wiki/Representational_state_transfer "Representational state transfer"). Our API has predictable resource-oriented URLs, accepts form-encoded request bodies, returns JSON-encoded responses, and uses standard HTTP response codes.
 
-# :book: Summary
+# 📖 Summary
 
 1. [Errors](#errors)
 2. [Endpoints](#endpoints)
@@ -28,9 +28,9 @@ Pypot uses conventional HTTP response codes to indicate the success or failure o
 
 # Endpoints
 
-## :electric_plug: Miscellaneous
+## 🔌 Miscellaneous
 
-#### :book: Summary
+#### 📕 Summary
 
 ```nginx
 GET /
@@ -882,9 +882,9 @@ Gets the ip of the robot.
 ```
 </details>
 
-## :gear: Motors
+## ⚙ Motors
 
-#### :book: Summary
+#### 📕 Summary
 
 ```nginx
 GET /motors/list.json
@@ -1282,9 +1282,9 @@ curl -X POST \
 
 </details>
 
-## :camera: Sensors
+## 📷 Sensors
 
-#### :book: Summary
+#### 📕 Summary
 
 ```nginx
 GET /sensors/list.json
@@ -1396,7 +1396,7 @@ POST /sensors/<sensor_name>/registers/<register_name>/value.json + new_value
 
 Changes the value of a register of a sensor. Sensor name and register name are given in the url. The new value is given in the body request.
 
-**:warning: This post request could not be tested because our Poppies only have read-only sensor registers :warning:**
+**⚠ This post request could not be tested because our Poppies only have read-only sensor registers ⚠**
 
 <b>cURL command example</b>
 
@@ -1423,9 +1423,9 @@ Returns the following error:
 </details>
 
 
-## :mechanical_arm: Records
+## 🦾 Records
 
-#### :book: Summary
+#### 📕 Summary
 
 ```nginx
 GET /records/list.json
@@ -1825,9 +1825,9 @@ curl -X POST \
 
 </details>
 
-## :robot: Primitives
+## 🤖 Primitives
 
-#### :book: Summary
+#### 📕 Summary
 
 ```nginx
 GET /primitives/list.json
