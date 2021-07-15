@@ -17,6 +17,7 @@
     * [Usage of Jupyter notebooks](programming/notebooks.md)
     * [Programming in Python](programming/python.md)
     * [Robots APIs](programming/rest.md)
+    * [MD Languages](programming/languages.md)
     * [Activities](demo-activities/README.md)
     * [Link with Snap4Arduino](demo-activities/snap4arduino.md)
 * [From simulation to real robot](from-simulation-to-real-robot/README.md)
