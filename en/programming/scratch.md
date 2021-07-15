@@ -1,25 +1,14 @@
 # Programming Poppy robots using Scratch
 
-*Presentation of Scratch*
+Scratch is an block-based visual and [open source](https://github.com/LLK) programming language, targeted primarily at children 8-16 as an educational tool for coding.
 
-## Introduction to Snap_!_ programming
+You can find a lot of programming ideas and tutorials on [Scratch website](https://scratch.mit.edu/ideas) 
+
+## Introduction to Scratch programming
 
 This chapter will focus on things necessary to understand in Scratch for using Poppy creatures.
 
 ### Connect your robot to Scratch
-
-#### If you use a simulated robot on CoppeliaSim
-> **Info** You need to have installed Poppy software libraries and CoppeliaSim simulator on your computer. If it is not done, go to the [install poppy software section](../installation/install-poppy-softwares.md).
-
-First open CoppeliaSim.
-
-The quickest way is to use the command line utility [poppy-service](../software-libraries/poppy-creature.md#poppy-services). Copy and press enter to execute the command below in your command prompt (windows) or terminal (OSX and Linux):
-```bash
-poppy-services --scratch --vrep poppy-ergo-jr
-```
-*Substitute 'poppy-ergo-jr' with 'poppy-humanoid' or 'poppy-torso' to launch respectively a Poppy Humanoid or a Poppy Torso*.
-
-It will open a Scratch tab in your web browser for a simulated poppy-ergo-jr.
 
 #### If you have a tangible robot
 
@@ -32,9 +21,25 @@ The home page of your poppy creature should look like the snapshot below:
 
 Click on the "Programming" link and then on **Scratch** to open the Scratch interface at start the connection with the Poppy robot.
 
+#### If you use a simulated robot on CoppeliaSim
+> **Info** You need to have installed Poppy software libraries and CoppeliaSim simulator on your computer. If it is not done, go to the [install poppy software section](../installation/install-poppy-softwares.md).
+
+First open CoppeliaSim.
+
+The quickest way is to use the command line utility [poppy-service](../software-libraries/poppy-creature.md#poppy-services). Copy and press enter to execute the command below in your command prompt (windows) or terminal (OSX and Linux):
+```bash
+poppy-services --scratch --vrep poppy-ergo-jr
+```
+
+It will open a Scratch tab in your web browser for a simulated poppy-ergo-jr.
+
+*Substitute 'poppy-ergo-jr' with 'poppy-humanoid' or 'poppy-torso' to launch respectively a Poppy Humanoid or a Poppy Torso*.
+
 ### Install Poppy Extension
 
-Procedure to install Poppy extension
+Click on ![add extension button](../img/scratch/INTERFACE_addExtension.png) and then select the Poppy Extension:
+
+![extension](../img/scratch/INTERFACE_extension.png)
 
 ### Build your own blocks!
 
@@ -54,12 +59,11 @@ You can build your own blocks
 | ![](../img/scratch/MOTOR_getAllMotorPositions.PNG) | Gives the position of every motors. It is useful to make a snapshot of pose of the robot. |
 | ![](../img/scratch/MOTOR_index.PNG) | Returns the index of a motor name in the "all motors" block list. |
 | ![](../img/scratch/MOTOR_setCompliant.PNG) | Puts one or many motors in compliant or stiff mode. Motors are hand-drivable in compliant mode but must be in stiff mode to be controlled with Scratch. The "motor_name" input can accept: a string of a motor name (e.g. m1); string of many motors separated with commas (e.g. m1,m2,m4); a Scratch list of motors like the reporter block "all motors" |
-| ![](../img/scratch/MOTOR_setVarOfMotor.PNG) | MOTOR_setVarOfMotor |
+| ![](../img/scratch/MOTOR_setVarOfMotor.PNG) | Sets the value to one register (position, speed, max torque, ...) of a motor. |
 | ![](../img/scratch/MOTOR_goto.PNG) | Sets a motor's "position", in "duration" seconds and if wait is set to true, it will only exectute next block after the move is complete. Motors should be given as a list of motor names. Position should be given as a list of float values (it corresponds to the angle values to reach for each motor). Duration should be given as float, in seconds.
 | ![](../img/scratch/SENSOR_cardDetection.PNG) | Return a boolean (true/false) depending if the selected card is detected by the camera of the robot. |
 | ![](../img/scratch/MOVE_allRecordedMoves.PNG) | MOVE_allRecordedMoves |
-| ![](../img/scratch/MOVE_record.PNG) | If your motors are compliant, you will be able to move your robot motors and record some moves. Motors should be given as a list of names separated by commas (e.g. m1,m3,m4) or with a Scratch list of motors like the reporter block "all motors". |
-If a move of the same name has already been defined, it will be overwritten ! |
+| ![](../img/scratch/MOVE_record.PNG) | If your motors are compliant, you will be able to move your robot motors and record some moves. Motors should be given as a list of names separated by commas (e.g. m1,m3,m4) or with a Scratch list of motors like the reporter block "all motors". If a move of the same name has already been defined, it will be overwritten ! |
 | ![](../img/scratch/MOVE_save.PNG) | Stop a record and save the recorded move in the robot. Be careful, you must have previously defined a move record with the "create & start record move ..." block. |
 | ![](../img/scratch/MOVE_play.PNG) | Replays a recorded move. The "speed" parameter is a float value. It can be negative to play the move backwards (e.g. `-1`). `1.0` is the speed to give to replay the move at the same speed as it was recorded. |
 | ![](../img/scratch/MOVE_stop.PNG) | Stops the replay of a recorded move. |
