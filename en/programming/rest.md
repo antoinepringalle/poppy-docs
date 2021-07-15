@@ -1218,7 +1218,7 @@ POST /motors/<motor_name>/goto.json + position + duration + wait
 <b>Description</b>
 
 
-Sets a motor's `position`, in `duration` seconds and if wait is set to true, il will only return it answer after the move is complete.
+Sets a motor's `position`, in `duration` seconds and if wait is set to true, it will only return its answer after the move is complete.
 
 Position should be given as a float value (it corresponds to the angle value to reach). Duration should be given as float, in seconds. And wait should be either `true`, `True` or `1` if you want to wait, anything else otherwise. Wait is set to `false` by default. 
 
@@ -1681,9 +1681,9 @@ POST /records/<move_name>/record.json + motors
 
 <b>Description</b>
 
-If your motors are compliant, you will be able to move your robot motors are records some moves. This request starts a record.
+If your motors are compliant, you will be able to move your robot motors and record some moves. This request starts a record.
 
-Motor names in the body are optional. If yout body is empty, it will by default record the move with all motors. Motors should be given as follows: `{"motors": ["head_z", "l_arm_z"]}` or `{"motors": "head_z,l_arm_z"]}`.
+Motor names in the body are optional. If your body is empty, it will by default record the move with all motors. Motors should be given as follows: `{"motors": ["head_z", "l_arm_z"]}` or `{"motors": "head_z,l_arm_z"]}`.
 
 If a move of the same name has already been defined, it will be overwritten !
 
@@ -1743,7 +1743,7 @@ POST /records/<move_name>/play.json + speed
 
 Replays a recorded move.
 
-The speed parameter is a float value. It can be negative to play the move backwards. it should be given as follows: `{"speed":-1.0}` or `{"speed":0.5}`.
+The speed parameter is a float value. It can be negative to play the move backwards. It should be given as follows: `{"speed":-1.0}` or `{"speed":0.5}`.
 
 > `1.0` is the speed to give to replay the move at the same speed as it was recorded.
 
@@ -1773,7 +1773,7 @@ POST /records/<move_name>/stop.json
 
 <b>Description</b>
 
-Stops the replay a of a record move.
+Stops the replay of a recorded move.
 
 This request does not need data in its body.
 
