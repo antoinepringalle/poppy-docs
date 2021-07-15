@@ -22,7 +22,7 @@ Pypot uses conventional HTTP response codes to indicate the success or failure o
 
 #### 📕 Summary
 
-```nginx
+```apache
 GET /
 GET /robot.json
 GET /ip.json
@@ -31,7 +31,7 @@ GET /ip.json
 
 ### Getting all endpoints
 
-```nginx
+```apache
 GET /
 ```
 
@@ -91,7 +91,7 @@ Post method url:
 
 ### Getting all robot values
 
-```nginx
+```apache
 GET /robot.json
 ```
 
@@ -886,7 +886,7 @@ On a Poppy Torso:
 - - -
 
 ### Resolving the robot ip
-```nginx
+```apache
 GET /ip.json
 ```
 
@@ -912,7 +912,7 @@ Gets the ip of the robot.
 
 #### 📕 Summary
 
-```nginx
+```apache
 GET /motors/list.json
 GET /motors/aliases/list.json
 GET /motors/<alias>/list.json
@@ -924,7 +924,7 @@ GET /motors/registers/<register_name>/list.json
 - - -
 
 ### Getting the list of motors
-```nginx
+```apache
 GET /motors/list.json
 ```
 
@@ -964,7 +964,7 @@ On a Poppy Torso:
 - - -
 
 ### Getting the list of motor aliases
-```nginx
+```apache
 GET /motors/aliases/list.json
 ```
 
@@ -995,7 +995,7 @@ On a Poppy Torso:
 - - -
 
 ### Getting the list of motors of an alias
-```nginx
+```apache
 GET /motors/<alias>/list.json
 ```
 
@@ -1023,7 +1023,7 @@ On a Poppy Torso:
 - - -
 
 ### Getting the list of registers of a motor
-```nginx
+```apache
 GET /motors/<motor_name>/registers/list.json
 ```
 
@@ -1069,7 +1069,7 @@ On a Poppy Torso:
 - - -
 
 ### Getting the value of a motor register
-```nginx
+```apache
 GET /motors/<motor_name>/registers/<register_name>/value.json
 ```
 
@@ -1092,7 +1092,7 @@ Gives the value of a register of a motor. Motor name and register name are given
 - - -
 
 ### Setting the value of a motor register
-```nginx
+```apache
 POST /motors/<motor_name>/registers/<register_name>/value.json + new_value
 ```
 
@@ -1120,7 +1120,7 @@ curl -X POST \
 - - -
 
 ### Getting the register values for all motors
-```nginx
+```apache
 GET /motors/registers/<register_name>/list.json
 ```
 
@@ -1211,7 +1211,7 @@ On a Poppy Torso:
 - - -
 
 ### Moving a motor
-```nginx
+```apache
 POST /motors/<motor_name>/goto.json + position + duration + wait
 ```
 
@@ -1248,7 +1248,7 @@ curl -X POST \
 - - -
 
 ### Moving several motors
-```nginx
+```apache
 POST /motors/goto.json + motors + positions + duration + wait
 ```
 
@@ -1285,7 +1285,7 @@ curl -X POST \
 
 #### 📕 Summary
 
-```nginx
+```apache
 GET /sensors/list.json
 GET /sensors/<sensor_name>/registers/list.json
 GET /sensors/<sensor_name>/registers/<register_name>/value.json
@@ -1295,7 +1295,7 @@ POST /sensors/<sensor_name>/registers/<register_name>/value.json + new_value
 - - -
 
 ### Getting the list of sensors
-```nginx
+```apache
 GET /sensors/list.json
 ```
 
@@ -1322,7 +1322,7 @@ Gives the list of all sensors the Poppy robot.
 - - -
 
 ### Getting the list of registers of a sensor
-```nginx
+```apache
 GET /sensors/<sensor_name>/registers/list.json
 ```
 
@@ -1351,7 +1351,7 @@ Gives the list of register names of a sensor.
 - - -
 
 ### Getting the value of a sensor register
-```nginx
+```apache
 GET /sensors/<sensor_name>/registers/<register_name>/value.json
 ```
 
@@ -1378,7 +1378,7 @@ Gives the value of a register of a sensor.
 - - -
 
 ### Setting the value of a sensor register
-```nginx
+```apache
 POST /sensors/<sensor_name>/registers/<register_name>/value.json + new_value
 ```
 
@@ -1413,7 +1413,7 @@ Returns the following error:
 
 #### 📕 Summary
 
-```nginx
+```apache
 GET /records/list.json
 POST /records/<move_name>/record.json
 POST /records/<move_name>/save.json
@@ -1424,7 +1424,7 @@ POST /records/<move_name>/stop.json
 - - -
 
 ### Getting available records
-```nginx
+```apache
 GET /records/list.json
 ```
 
@@ -1452,7 +1452,7 @@ Gives the list of all recorded moves by the user.
 - - -
 
 ###  Getting all positions of a record
-```nginx
+```apache
 GET records/<move_name>/value.json
 ```
 
@@ -1675,7 +1675,7 @@ The answer will give all positions for each recorded motor every 0.2 second in t
 - - -
 
 ### Recording a move
-```nginx
+```apache
 POST /records/<move_name>/record.json + motors
 ```
 
@@ -1706,7 +1706,7 @@ curl -X POST \
 - - -
 
 ### Saving a move
-```nginx
+```apache
 POST /records/<move_name>/save.json
 ```
 
@@ -1735,7 +1735,7 @@ curl -X POST \
 - - -
 
 ### Playing a recorded move
-```nginx
+```apache
 POST /records/<move_name>/play.json + speed
 ```
 
@@ -1767,7 +1767,7 @@ curl -X POST \
 - - -
 
 ### Stopping the replay of a recorded move 
-```nginx
+```apache
 POST /records/<move_name>/stop.json
 ```
 
@@ -1797,7 +1797,7 @@ curl -X POST \
 
 #### 📕 Summary
 
-```nginx
+```apache
 GET /primitives/list.json
 GET /primitives/running/list.json
 GET /primitives/<primitive_name>/start.json
@@ -1814,7 +1814,7 @@ POST /primitives/<primitive_name>/methods/<method_name>/args.json
 - - -
 
 ### Getting the list of all primitives
-```nginx
+```apache
 GET /primitives/list.json
 ```
 
@@ -1849,7 +1849,7 @@ Primitives are predefined behaviours of our Poppy robots. You can add your own p
 - - -
 
 ### Getting the list of all running primitives
-```nginx
+```apache
 GET /primitives/running/list.json
 ```
 
@@ -1875,7 +1875,7 @@ Same request as above but only gives the running primitives
 - - -
 
 ### Running a primitive
-```nginx
+```apache
 GET /primitives/<primitive_name>/start.json
 ```
 
@@ -1900,7 +1900,7 @@ All existing primitives can be found with `GET /primitives/list.json` (described
 - - -
 
 ### Stopping a primitive
-```nginx
+```apache
 GET /primitives/<primitive_name>/stop.json
 ```
 
@@ -1923,7 +1923,7 @@ Stops a previously running primitive.
 - - -
 
 ### Pausing a primitive
-```nginx
+```apache
 GET /primitives/<primitive_name>/pause.json
 ```
 
@@ -1946,7 +1946,7 @@ Pauses a previously running primitive.
 - - -
 
 ### Resuming a primitive
-```nginx
+```apache
 GET /primitives/<primitive_name>/resume.json
 ```
 
@@ -1969,7 +1969,7 @@ Resumes a previously paused primitive.
 - - -
 
 ### Getting the list of all properties of a primitive
-```nginx
+```apache
 GET /primitives/<primitive_name>/properties/list.json
 ```
 
@@ -1994,7 +1994,7 @@ Unfortunately, my primitives don't have any property.
 - - -
 
 ### Getting the value of a property of a primitive
-```nginx
+```apache
 GET /primitives/<primitive_name>/properties/<prop>/value.json
 ```
 
@@ -2015,7 +2015,7 @@ Unfortunately, my primitives don't have any property.
 - - -
 
 ### Setting the value of a property of a primitive
-```nginx
+```apache
 POST /primitives/<primitive_name>/properties/<prop>/value.json + new_value
 ```
 
@@ -2040,7 +2040,7 @@ Unfortunately, my primitives don't have any property.
 - - -
 
 ### Getting the list of all methods of a primitive
-```nginx
+```apache
 GET /primitives/<primitive_name>/methods/list.json
 ```
 
@@ -2069,7 +2069,7 @@ Gives the list of methods names of a primitive.
 - - -
 
 ### Calling a method of a primitive with arguments
-```nginx
+```apache
 POST /primitives/<primitive_name>/methods/<method_name>/args.json
 ```
 
