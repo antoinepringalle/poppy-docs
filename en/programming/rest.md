@@ -6,7 +6,7 @@ The Pypot API is organized around [REST](https://en.wikipedia.org/wiki/Represent
 
 # Errors
 
-Pypot uses conventional HTTP response codes to indicate the success or failure of an API request. In general: Codes in the `2xx` range indicate success. Codes in the `4xx` range indicate an error that failed given the information provided (e.g., a required parameter was omitted, a charge failed, etc.). Codes in the `5xx` range indicate an error with Poppy's servers (these are rare).
+Pypot uses conventional HTTP response codes to indicate the success or failure of an API request. In general: Codes in the `2xx` range indicate success. Codes in the `4xx` range indicate an error that failed given the information provided (e.g. a required parameter was omitted, a charge failed, etc.). Codes in the `5xx` range indicate an error with Poppy's servers (these are rare).
 
 | Code | Meaning |
 | ----:|:------- |
@@ -97,7 +97,7 @@ GET /robot.json
 
 <b>Description</b>
 
-Get all robot values, such as motors attribute values, or primitive methods.
+Get all robot values, such as motors attribute values, or behaviour methods.
 
 <b>cURL command</b>
 
@@ -930,7 +930,7 @@ GET /motors/list.json
 
 <b>Description</b>
 
-Gives the list of all Poppy's motors.
+Gives the list of all Poppy robot motors.
 
 <b>cURL command</b>
 
@@ -1001,7 +1001,7 @@ GET /motors/<alias>/list.json
 
 <b>Description</b>
 
-Gives all the motor names list of motors of an alias
+Gives all the motor names list of motors of an alias.
 
 <b>cURL command example</b>
 
@@ -1254,7 +1254,7 @@ POST /motors/goto.json + motors + positions + duration + wait
 
 <b>Description</b>
 
-Sets the `position` of `motors`, in `duration` seconds and if wait is set to true, il will only return it answer after the move is complete.
+Sets the `position` of `motors`, in `duration` seconds and if wait is set to true, it will only return it answer after the move is complete.
 
 Motors should be given as a list of motor names. Position should be given as a list of float values (it corresponds to the angle values to reach for each motor). Duration should be given as float, in seconds. And wait should be either `true`, `True` or `1` if you want to wait, anything else otherwise. Wait is set to `false` by default. 
 
@@ -1685,7 +1685,7 @@ If your motors are compliant, you will be able to move your robot motors and rec
 
 Motor names in the body are optional. If your body is empty, it will by default record the move with all motors. Motors should be given as follows: `{"motors": ["head_z", "l_arm_z"]}` or `{"motors": "head_z,l_arm_z"]}`.
 
-If a move of the same name has already been defined, it will be overwritten !
+⚠ If a move of the same name has already been defined, it will be overwritten !
 
 <b>cURL command example example</b>
 ```bash
@@ -2002,7 +2002,7 @@ GET /primitives/<primitive_name>/properties/<prop>/value.json
 
 It would give the value of a property of a primitive.
 
-Unfortunately, my primitives don't have any property.
+**⚠ This get request could not be tested because our primitives don't have any property ⚠**
 
 <b>cURL command</b>
 
@@ -2023,7 +2023,7 @@ POST /primitives/<primitive_name>/properties/<prop>/value.json + new_value
 
 It would set the value of a property of a primitive.
 
-Unfortunately, my primitives don't have any property.
+**⚠ This post request could not be tested because our primitives don't have any property ⚠**
 
 <b>cURL command</b>
 
