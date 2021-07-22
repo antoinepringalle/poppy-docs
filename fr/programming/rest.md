@@ -1,26 +1,26 @@
-# Pypot's REST API
+# API REST de Pypot
 
-> **Caution** REST API has been updated in v4.0.0. This page presents the documentation of the v4.0.0 API.
+> **Attention** L'API REST a été mise à jour dans la version 4.0.0. Cette page présente la documentation de l'API v4.0.0.
 
-The Pypot API is organized around [REST](https://en.wikipedia.org/wiki/Representational_state_transfer "Representational state transfer"). Our API has predictable resource-oriented URLs, accepts form-encoded request bodies, returns JSON-encoded responses, and uses standard HTTP response codes.
+L'API Pypot est organisée autour de [REST](https://fr.wikipedia.org/wiki/Representational_state_transfer "Representational state transfer"). Notre API dispose d'URLs prévisibles orientées ressources, renvoie des réponses codées en JSON et utilise des codes de réponse HTTP standard.
 
-# Errors
+# Les erreurs
 
-Pypot uses conventional HTTP response codes to indicate the success or failure of an API request. In general: Codes in the `2xx` range indicate success. Codes in the `4xx` range indicate an error that failed given the information provided (e.g. a required parameter was omitted, a charge failed, etc.). Codes in the `5xx` range indicate an error with Poppy's servers (these are rare).
+Pypot utilise des codes de réponse HTTP conventionnels pour indiquer le succès ou l'échec d'une requête API. En général: les codes de la plage «2xx» indiquent le succès. Les codes de la plage «4xx» indiquent une erreur qui a échoué compte tenu des informations fournies (par exemple, un paramètre requis a été omis, une charge a échoué, etc.). Les codes de la gamme `5xx` indiquent une erreur avec les serveurs de Poppy (c'est rare).
 
-| Code | Meaning |
+| Code | Signification |
 | ----:|:------- |
-| 200 - OK | Everything worked as expected. |
-| 202 - Accepted | The request has been accepted for processing, but the processing has not been completed. |
-| 204 - No Content | The server has fulfilled the request but it does not return anything. |
-| 404 - Not Found | The requested resource doesn't exist. |
-| 500, 502, 503, 504 - Server Errors | Something went wrong on Poppy's end. (These are rare.) |
+| 200 - OK | Tout a fonctionné comme prévu. |
+| 202 - Accepted | La demande a été acceptée pour traitement, mais le traitement n'est pas terminé. |
+| 204 - No Content | Le serveur a répondu à la demande mais il ne renvoie rien. |
+| 404 - Not Found | La ressource demandée n'existe pas. |
+| 500, 502, 503, 504 - Server Errors | Quelque chose s'est mal passé du côté de Poppy. (C'est rare) |
 
-# Endpoints
+# Points de terminaison
 
-## 🔌 Miscellaneous
+## 🔌 Divers
 
-#### 📕 Summary
+#### 📕 Sommaire
 
 ```apache
 GET /
@@ -29,7 +29,7 @@ GET /ip.json
 ```
 - - -
 
-### Getting all endpoints
+### Obtenir tous les points de terminaison
 
 ```apache
 GET /
@@ -37,14 +37,14 @@ GET /
 
 <b>Description</b>
 
-Gives all endpoints of the REST API in an HTML format
+Fournit tous les points de terminaison de l'API REST au format HTML.
 
-<b>cURL command</b>
+<b>Commande cURL</b>
 
 `curl http://poppy.local:8080/`
 
 
-<b>Returned value</b>
+<b>Valeur de retour</b>
 
 ```
 All url paths availables:
@@ -89,7 +89,7 @@ Post method url:
 
 - - -
 
-### Getting all robot values
+### Obtenir toutes les valeurs du robot
 
 ```apache
 GET /robot.json
@@ -97,15 +97,15 @@ GET /robot.json
 
 <b>Description</b>
 
-Get all robot values, such as motors attribute values, or behaviour methods.
+Obtenez toutes les valeurs du robot, telles que les valeurs d'attributs des moteurs ou les méthodes de comportement.
 
-<b>cURL command</b>
+<b>Commande cURL</b>
 
 `curl http://poppy.local:8080/robot.json`
 
-<b>Returned value</b>
+<b>Valeur de retour</b>
 
-On a Poppy Torso:
+Sur un Poppy Torso:
 ```json
 {
     "motors":
@@ -885,20 +885,20 @@ On a Poppy Torso:
 
 - - -
 
-### Resolving the robot ip
+### Obtenir l'ip du robot
 ```apache
 GET /ip.json
 ```
 
 <b>Description</b>
 
-Gets the ip of the robot.
+Permet de récupérer l'adresse IP du robot.
 
-<b>cURL command</b>
+<b>Commande cURL</b>
 
 `curl http://poppy.local:8080/ip.json`
 
-<b>Returned value</b>
+<b>Valeur de retour</b>
 
 ```json
 {
@@ -908,9 +908,9 @@ Gets the ip of the robot.
 
 
 
-## ⚙ Motors
+## ⚙ Moteurs
 
-#### 📕 Summary
+#### 📕 Sommaire
 
 ```apache
 GET /motors/list.json
@@ -923,22 +923,22 @@ GET /motors/registers/<register_name>/list.json
 ```
 - - -
 
-### Getting the list of motors
+### Obtenir la liste des moteurs
 ```apache
 GET /motors/list.json
 ```
 
 <b>Description</b>
 
-Gives the list of all Poppy robot motors.
+Donne la liste de tous les moteurs du robot Poppy.
 
-<b>cURL command</b>
+<b>Commande cURL</b>
 
 `curl http://poppy.local:8080/motors/list.json`
 
-<b>Returned value</b>
+<b>Valeur de retour</b>
 
-On a Poppy Torso:
+Sur un Poppy Torso :
 
 ```json
 {
@@ -963,22 +963,22 @@ On a Poppy Torso:
 
 - - -
 
-### Getting the list of motor aliases
+### Obtenir la liste des alias moteur
 ```apache
 GET /motors/aliases/list.json
 ```
 
 <b>Description</b>
 
-Aliases define a group of motors. This get request will give you all alias names defined.
+Les alias définissent un groupe de moteurs. Cette requête vous donnera tous les noms d'alias définis.
 
-<b>cURL command</b>
+<b>Commande cURL</b>
 
 `curl http://poppy.local:8080/motors/aliases/list.json`
 
-<b>Returned value</b>
+<b>Valeur de retour</b>
 
-On a Poppy Torso:
+Sur un Poppy Torso :
 ```json
 {
     "aliases":
@@ -994,22 +994,22 @@ On a Poppy Torso:
 
 - - -
 
-### Getting the list of motors of an alias
+### Obtenir la liste des moteurs d'un alias
 ```apache
 GET /motors/<alias>/list.json
 ```
 
 <b>Description</b>
 
-Gives all the motor names list of motors of an alias.
+Donne tous les noms de moteurs faisant partie de l'alias donné dans l'url.
 
-<b>cURL command example</b>
+<b>Exemple d'une commande cURL</b>
 
 `curl http://poppy.local:8080/motors/head/list.json`
 
-<b>Returned value</b>
+<b>Valeur de retour</b>
 
-On a Poppy Torso:
+Sur un Poppy Torso :
 ```json
 {
     "head":
@@ -1022,22 +1022,22 @@ On a Poppy Torso:
 
 - - -
 
-### Getting the list of registers of a motor
+### Obtenir la liste des registres d'un moteur
 ```apache
 GET /motors/<motor_name>/registers/list.json
 ```
 
 <b>Description</b>
 
-Gives the list of all registers of a motor.
+Donne la liste de tous les registres d'un moteur.
 
-<b>cURL command example</b>
+<b>Exemple d'une commande cURL</b>
 
 `curl http://poppy.local:8080/motors/head_z/registers/list.json`
 
-<b>Returned value</b>
+<b>Valeur de retour</b>
 
-On a Poppy Torso:
+Sur un Poppy Torso :
 ```json
 {
     "registers":
@@ -1068,20 +1068,20 @@ On a Poppy Torso:
 
 - - -
 
-### Getting the value of a motor register
+### Obtenir la valeur d'un registre d'un moteur
 ```apache
 GET /motors/<motor_name>/registers/<register_name>/value.json
 ```
 
 <b>Description</b>
 
-Gives the value of a register of a motor. Motor name and register name are given in the url.
+Donne la valeur d'un registre d'un moteur. Le nom du moteur et le nom du registre sont indiqués dans l'url.
 
-<b>cURL command example</b>
+<b>Exemple d'une commande cURL</b>
 
 `curl http://poppy.local:8080/motors/head_z/registers/present_temperature/value.json`
 
-<b>Returned value</b>
+<b>Valeur de retour</b>
 
 ```json
 {
@@ -1091,16 +1091,16 @@ Gives the value of a register of a motor. Motor name and register name are given
 
 - - -
 
-### Setting the value of a motor register
+### Définir la valeur d'un registre d'un moteur
 ```apache
 POST /motors/<motor_name>/registers/<register_name>/value.json + new_value
 ```
 
 <b>Description</b>
 
-Changes the value of a register of a motor. Motor name and register name are given in the url. The new value is given in the body request.
+Modifie la valeur d'un registre d'un moteur. Le nom du moteur et le nom du registre sont indiqués dans l'url. La nouvelle valeur est donnée dans le corps de la requête.
 
-<b>cURL command example</b>
+<b>Exemple d'une commande cURL</b>
 
 ```bash
 curl -X POST \
@@ -1109,7 +1109,7 @@ curl -X POST \
      http://poppy.local:8080/motors/head_z/registers/compliant/value.json
 ```
 
-<b>Returned value</b>
+<b>Valeur de retour</b>
 
 ```json
 {
@@ -1119,22 +1119,22 @@ curl -X POST \
 
 - - -
 
-### Getting the register values for all motors
+### Obtenir les valeurs d'un registre pour tous les moteurs
 ```apache
 GET /motors/registers/<register_name>/list.json
 ```
 
 <b>Description</b>
 
-It gives the value of a register for all motors.
+Cette requête donne la valeur d'un registre pour tous les moteurs du robot.
 
-<b>cURL command example</b>
+<b>Exemple d'une commande cURL</b>
 
 `curl http://poppy.local:8080/motors/registers/angle_limit/list.json`
 
-<b>Returned value</b>
+<b>Valeur de retour</b>
 
-On a Poppy Torso:
+Sur un Poppy Torso :
 ```json
 {
     "angle_limit":
@@ -1210,7 +1210,7 @@ On a Poppy Torso:
 
 - - -
 
-### Moving a motor
+### Déplacer un moteur
 ```apache
 POST /motors/<motor_name>/goto.json + position + duration + wait
 ```
@@ -1218,11 +1218,11 @@ POST /motors/<motor_name>/goto.json + position + duration + wait
 <b>Description</b>
 
 
-Sets a motor's `position`, in `duration` seconds and if wait is set to true, it will only return its answer after the move is complete.
+Définit la **position** des **motors**, en **duration** secondes et si **wait** vaut `vrai`, il ne renverra sa réponse qu'une fois le déplacement terminé.
 
-Position should be given as a float value (it corresponds to the angle value to reach). Duration should be given as float, in seconds. And wait should be either `true`, `True` or `1` if you want to wait, anything else otherwise. Wait is set to `false` by default. 
+La position doit être donnée sous forme de valeur flottante (elle correspond à la valeur de l'angle à atteindre). La durée doit être donnée sous forme de flottant, en secondes. Et **wait** doit valoir `true`, `True` ou `1` si vous voulez attendre, n'importe quelle autre valeur si vous ne voulez pas attendre. **wait** est défini sur `false` par défaut. 
 
-<b>cURL command example</b>
+<b>Exemple d'une commande cURL</b>
 
 
 ```bash
@@ -1232,7 +1232,7 @@ curl -X POST \
      http://localhost\:8080/motors/bust_y/goto.json
 ```
 
-<b>Returned value</b>
+<b>Valeur de retour</b>
 
 ```json
 {
@@ -1247,18 +1247,18 @@ curl -X POST \
 
 - - -
 
-### Moving several motors
+### Déplacer plusieurs moteurs
 ```apache
 POST /motors/goto.json + motors + positions + duration + wait
 ```
 
 <b>Description</b>
 
-Sets the `position` of `motors`, in `duration` seconds and if wait is set to true, it will only return it answer after the move is complete.
+Définit la **position** des **motors**, en **duration** secondes et si **wait** vaut `vrai`, il ne renverra sa réponse qu'une fois le déplacement terminé.
 
-Motors should be given as a list of motor names. Position should be given as a list of float values (it corresponds to the angle values to reach for each motor). Duration should be given as float, in seconds. And wait should be either `true`, `True` or `1` if you want to wait, anything else otherwise. Wait is set to `false` by default. 
+Les moteurs doivent être indiqués sous forme de liste de noms de moteurs. La position doit être donnée sous forme de liste de valeurs flottantes (elle correspond aux valeurs d'angle à atteindre pour chaque moteur). La durée doit être donnée sous forme de flottant, en secondes. Et wait devrait être soit `true`, `True` ou `1` si vous voulez attendre, n'importe quelle autre valeur si vous ne voulez pas attendre. **wait** est défini sur `false` par défaut. 
 
-<b>cURL command example</b>
+<b>Exemple d'une commande cURL</b>
 
 ```bash
 curl -X POST \
@@ -1267,7 +1267,7 @@ curl -X POST \
      http://localhost\:8080/motors/goto.json
 ```
 
-<b>Returned value</b>
+<b>Valeur de retour</b>
 
 ```json
 {
@@ -1281,9 +1281,9 @@ curl -X POST \
 }
 ```
 
-## 📷 Sensors
+## 📷 Capteurs
 
-#### 📕 Summary
+#### 📕 Sommaire
 
 ```apache
 GET /sensors/list.json
@@ -1294,20 +1294,20 @@ POST /sensors/<sensor_name>/registers/<register_name>/value.json + new_value
 
 - - -
 
-### Getting the list of sensors
+### Obtenir la liste des capteurs
 ```apache
 GET /sensors/list.json
 ```
 
 <b>Description</b>
 
-Gives the list of all sensors the Poppy robot.
+Donne la liste de tous les capteurs du robot Poppy.
 
-<b>cURL command</b>
+<b>Commande cURL</b>
 
 `curl http://poppy.local:8080/sensors/list.json`
 
-<b>Returned value</b>
+<b>Valeur de retour</b>
 
 ```json
 {
@@ -1321,20 +1321,20 @@ Gives the list of all sensors the Poppy robot.
 
 - - -
 
-### Getting the list of registers of a sensor
+### Obtenir la liste des registres d'un capteur
 ```apache
 GET /sensors/<sensor_name>/registers/list.json
 ```
 
 <b>Description</b>
 
-Gives the list of register names of a sensor.
+Donne la liste des noms des registres d'un capteur.
 
-<b>cURL command example</b>
+<b>Exemple d'une commande cURL</b>
 
 `curl http://poppy.local:8080/sensors/camera/registers/list.json`
 
-<b>Returned value</b>
+<b>Valeur de retour</b>
 
 ```json
 {
@@ -1350,20 +1350,20 @@ Gives the list of register names of a sensor.
 
 - - -
 
-### Getting the value of a sensor register
+### Obtenir la valeur d'un registre de capteur
 ```apache
 GET /sensors/<sensor_name>/registers/<register_name>/value.json
 ```
 
 <b>Description</b>
 
-Gives the value of a register of a sensor.
+Donne la valeur d'un registre d'un capteur.
 
-<b>cURL command example</b>
+<b>Exemple d'une commande cURL</b>
 
 `curl http://poppy.local:8080/sensors/camera/registers/resolution/value.json`
 
-<b>Returned value</b>
+<b>Valeur de retour</b>
 
 ```json
 {
@@ -1377,18 +1377,18 @@ Gives the value of a register of a sensor.
 
 - - -
 
-### Setting the value of a sensor register
+### Définir de la valeur d'un registre d'un capteur
 ```apache
 POST /sensors/<sensor_name>/registers/<register_name>/value.json + new_value
 ```
 
 <b>Description</b>
 
-Changes the value of a register of a sensor. Sensor name and register name are given in the url. The new value is given in the body request.
+Modifie la valeur d'un registre d'un capteur. Le nom du capteur et le nom du registre sont indiqués dans l'url. La nouvelle valeur est donnée dans le corps de la requête.
 
-**⚠ This post request could not be tested because our Poppies only have read-only sensor registers ⚠**
+**⚠ Cette requête n'a pas pu être testée car nos robots Poppy n'ont que des capteurs dont les registres sont en lecture seule ⚠**
 
-<b>cURL command example</b>
+<b>Exemple d'une commande cURL</b>
 
 ```bash
 curl -X POST \
@@ -1397,21 +1397,20 @@ curl -X POST \
      http://poppy.local:8080/sensors/camera/registers/fps/value.json
 ```
 
-<b>Returned value</b>
+<b>Valeur de retour</b>
 
-Returns the following error:
+Cette requête retourne l'erreur suivante:
 ```json
 {
     "error": "Either sensor 'camera' or register 'fps' does not exist. Or you want to change a read-only register value",
     "tip": "You can find the list of sensors with /sensors/list.json and their registers with /sensors/<sensor_name>/registers/list.json",
-   
-: "can't set attribute"
+    "details" : "can't set attribute"
 }
 ```
 
-## 🦾 Records
+## 🦾 Enregistrements
 
-#### 📕 Summary
+#### 📕 Sommaire
 
 ```apache
 GET /records/list.json
@@ -1423,20 +1422,20 @@ POST /records/<move_name>/stop.json
 
 - - -
 
-### Getting available records
+### Obtenir les enregistrements disponibles
 ```apache
 GET /records/list.json
 ```
 
 <b>Description</b>
 
-Gives the list of all recorded moves by the user.
+Donne la liste de tous les déplacements enregistrés par l'utilisateur.
 
-<b>cURL command</b>
+<b>Commande cURL</b>
 
 `curl http://poppy.local:8080/records/list.json`
 
-<b>Returned value</b>
+<b>Valeur de retour</b>
 
 ```json
 {
@@ -1451,22 +1450,22 @@ Gives the list of all recorded moves by the user.
 
 - - -
 
-###  Getting all positions of a record
+###  Obtenir toutes les positions d'un enregistrement
 ```apache
 GET records/<move_name>/value.json
 ```
 
 <b>Description</b>
 
-Gives all positions of a record with the time when they were reached.
+Donne toutes les positions d'un enregistrement avec le temps auquel elles ont été atteintes.
 
-The answer will give all positions for each recorded motor every 0.2 second in the field `move_name`. It also gives the amount of time keys recorded in the field `length`.
+La réponse fournira toutes les positions pour chaque moteur enregistré, toutes les 0,2 seconde dans le champ **"move_name"**. Il donne également le nombre de positions enregistrées dans le champ **"longueur"**.
 
-<b>cURL command example</b>
+<b>Exemple d'une commande cURL</b>
 
 `curl http://poppy.local:8080/records/my_move/value.json`
 
-<b>Returned value</b>
+<b>Valeur de retour</b>
 
 ```json
 {
@@ -1674,20 +1673,20 @@ The answer will give all positions for each recorded motor every 0.2 second in t
 
 - - -
 
-### Recording a move
+### Enregistrer un mouvement
 ```apache
 POST /records/<move_name>/record.json + motors
 ```
 
 <b>Description</b>
 
-If your motors are compliant, you will be able to move your robot motors and record some moves. This request starts a record.
+Si vos moteurs sont mous, vous pourrez déplacer les moteurs de votre robot et enregistrer certains mouvements. Cette requête démarre un enregistrement.
 
-Motor names in the body are optional. If your body is empty, it will by default record the move with all motors. Motors should be given as follows: `{"motors": ["head_z", "l_arm_z"]}` or `{"motors": "head_z,l_arm_z"]}`.
+Les noms des moteurs dans le corps sont facultatifs. Si votre corps est vide, il enregistrera par défaut le mouvement avec tous les moteurs du robot. Les moteurs doivent être donnés de l'une des deux façons suivantes : `{"motors": ["head_z", "l_arm_z"]}` ou `{"motors": "head_z,l_arm_z"]}`.
 
-⚠ If a move of the same name has already been defined, it will be overwritten !
+⚠ Si un mouvement du même nom a déjà été défini, il sera écrasé !
 
-<b>cURL command example example</b>
+<b>Exemple d'une commande cURL</b>
 ```bash
 curl -X POST \
      -H 'Content-Type: application/json' \
@@ -1695,7 +1694,7 @@ curl -X POST \
      http://localhost:8080/records/my_move/record.json
 ```
 
-<b>Returned value</b>
+<b>Valeur de retour</b>
 
 ```json
 {
@@ -1705,18 +1704,17 @@ curl -X POST \
 
 - - -
 
-### Saving a move
+### Enregistrer un mouvement
 ```apache
 POST /records/<move_name>/save.json
 ```
 
 <b>Description</b>
 
-Stops the record and saves the move you were recording.
+Arrête l'enregistrement en cours et le sauvegarde.
+Cette requête n'a pas besoin d'information supplémentaire dans son corps de requête.
 
-This request does not need data in its body.
-
-<b>cURL command example</b>
+<b>Exemple d'une commande cURL</b>
 
 ```bash
 curl -X POST \
@@ -1724,7 +1722,7 @@ curl -X POST \
      http://localhost:8080/records/my_move/save.json
 ```
 
-<b>Returned value</b>
+<b>Valeur de retour</b>
 
 ```json
 {
@@ -1734,20 +1732,20 @@ curl -X POST \
 
 - - -
 
-### Playing a recorded move
+### Jouer un coup enregistré
 ```apache
 POST /records/<move_name>/play.json + speed
 ```
 
 <b>Description</b>
 
-Replays a recorded move.
+Rejoue un mouvement enregistré.
 
-The speed parameter is a float value. It can be negative to play the move backwards. It should be given as follows: `{"speed":-1.0}` or `{"speed":0.5}`.
+Le paramètre de vitesse est une valeur flottante. Il peut être négatif pour jouer le coup à l'envers. Il doit être donné de la façon suivante : `{"speed":-1.0}` ou `{"speed":0.5}`.
 
-> `1.0` is the speed to give to replay the move at the same speed as it was recorded.
+> `1.0` est la vitesse à donner pour rejouer le coup à la même vitesse qu'il a été enregistré.
 
-<b>cURL command example</b>
+<b>Exemple d'une commande cURL</b>
 
 ```bash
 curl -X POST \
@@ -1756,7 +1754,7 @@ curl -X POST \
      http://localhost:8080/records/my_move/play.json
 ```
 
-<b>Returned value</b>
+<b>Valeur de retour</b>
 
 ```json
 {
@@ -1766,18 +1764,18 @@ curl -X POST \
 
 - - -
 
-### Stopping the replay of a recorded move 
+### Arrêter la relecture d'un coup enregistré 
 ```apache
 POST /records/<move_name>/stop.json
 ```
 
 <b>Description</b>
 
-Stops the replay of a recorded move.
+Arrête la relecture d'un coup enregistré.
 
-This request does not need data in its body.
+Cette demande n'a pas besoin de données dans son corps.
 
-<b>cURL command example</b>
+<b>Exemple d'une commande cURL</b>
 
 ```bash
 curl -X POST \
@@ -1785,7 +1783,7 @@ curl -X POST \
      http://localhost:8080/records/my_move/stop.json
 ```
 
-<b>Returned value</b>
+<b>Valeur de retour</b>
 
 ```json
 {
@@ -1795,7 +1793,7 @@ curl -X POST \
 
 ## 🤖 Primitives
 
-#### 📕 Summary
+#### 📕 Sommaire
 
 ```apache
 GET /primitives/list.json
@@ -1813,20 +1811,20 @@ POST /primitives/<primitive_name>/methods/<method_name>/args.json
 
 - - -
 
-### Getting the list of all primitives
+### Obtenir la liste de toutes les primitives
 ```apache
 GET /primitives/list.json
 ```
 
 <b>Description</b>
 
-Primitives are predefined behaviours of our Poppy robots. You can add your own primitive if you write it in source files. A tutorial (FR :fr:) can be found for the Ergo-Jr [here](https://github.com/poppy-project/poppy-ergo-jr/blob/master/software/poppy_ergo_jr/primitives/How_to_add_primitive_FR.py). You can add your behaviour in `/home/poppy/dev/<creature_name>/software/<creature_name>/primitives` if you're on Raspberry.
+Les primitives sont des comportements prédéfinis de nos robots Poppy. Vous pouvez ajouter votre propre primitive si vous l'écrivez dans les fichiers source. Un tutoriel (FR :fr:) est disponible pour l'Ergo-Jr [ici](https://github.com/poppy-project/poppy-ergo-jr/blob/master/software/poppy_ergo_jr/primitives/How_to_add_primitive_FR.py). Vous pouvez ajouter votre comportement dans `/home/poppy/dev/<creature_name>/software/<creature_name>/primitives` si vous êtes sur Raspberry.
 
-<b>cURL command</b>
+<b>Commande cURL</b>
 
 `curl http://poppy.local:8080/primitives/list.json`
 
-<b>Returned value</b>
+<b>Valeur de retour</b>
 
 ```json
 {
@@ -1848,20 +1846,20 @@ Primitives are predefined behaviours of our Poppy robots. You can add your own p
 
 - - -
 
-### Getting the list of all running primitives
+### Obtenir la liste de toutes les primitives en cours d'exécution
 ```apache
 GET /primitives/running/list.json
 ```
 
 <b>Description</b>
 
-Same request as above but only gives the running primitives
+Même requête que ci-dessus mais elle ne donne que les primitives en cours d'exécution.
 
-<b>cURL command</b>
+<b>Commande cURL</b>
 
 `curl http://poppy.local:8080/primitives/running/list.json`
 
-<b>Returned value</b>
+<b>Valeur de retour</b>
 
 ```json
 {
@@ -1874,22 +1872,22 @@ Same request as above but only gives the running primitives
 
 - - -
 
-### Running a primitive
+### Exécuter une primitive
 ```apache
 GET /primitives/<primitive_name>/start.json
 ```
 
 <b>Description</b>
 
-Runs an existing primitive.
+Exécute une primitive existante.
 
-All existing primitives can be found with `GET /primitives/list.json` (described [above](#getting-the-list-of-all-primitives)).
+Toutes les primitives existantes peuvent être obtenues avec `GET /primitives/list.json` (décrite [ci-dessus](#obtenir-la-liste-de-toutes-les-primitives).
 
-<b>cURL command example</b>
+<b>Exemple d'une commande cURL</b>
 
 `curl http://poppy.local:8080/primitives/init_position/start.json`
 
-<b>Returned value</b>
+<b>Valeur de retour</b>
 
 ```json
 {
@@ -1899,20 +1897,20 @@ All existing primitives can be found with `GET /primitives/list.json` (described
 
 - - -
 
-### Stopping a primitive
+### Arrêter une primitive
 ```apache
 GET /primitives/<primitive_name>/stop.json
 ```
 
 <b>Description</b>
 
-Stops a previously running primitive.
+Arrête une primitive en cours d'exécution.
 
-<b>cURL command example</b>
+<b>Exemple d'une commande cURL</b>
 
 `curl http://poppy.local:8080/primitives/init_position/stop.json`
 
-<b>Returned value</b>
+<b>Valeur de retour</b>
 
 ```json
 {
@@ -1922,20 +1920,20 @@ Stops a previously running primitive.
 
 - - -
 
-### Pausing a primitive
+### Mettre une primitive en pause
 ```apache
 GET /primitives/<primitive_name>/pause.json
 ```
 
 <b>Description</b>
 
-Pauses a previously running primitive.
+Suspend une primitive en cours d'exécution.
 
-<b>cURL command example</b>
+<b>Exemple d'une commande cURL</b>
 
 `curl http://poppy.local:8080/primitives/init_position/pause.json`
 
-<b>Returned value</b>
+<b>Valeur de retour</b>
 
 ```json
 {
@@ -1945,20 +1943,20 @@ Pauses a previously running primitive.
 
 - - -
 
-### Resuming a primitive
+### Reprendre la lecture d'une primitive
 ```apache
 GET /primitives/<primitive_name>/resume.json
 ```
 
 <b>Description</b>
 
-Resumes a previously paused primitive.
+Reprend la lecture d'une primitive précédemment mise en pause.
 
-<b>cURL command example</b>
+<b>Exemple d'une commande cURL</b>
 
 `curl http://poppy.local:8080/primitives/init_position/resume.json`
 
-<b>Returned value</b>
+<b>Valeur de retour</b>
 
 ```json
 {
@@ -1968,22 +1966,22 @@ Resumes a previously paused primitive.
 
 - - -
 
-### Getting the list of all properties of a primitive
+### Obtenir la liste de toutes les propriétés d'une primitive
 ```apache
 GET /primitives/<primitive_name>/properties/list.json
 ```
 
 <b>Description</b>
 
-Gives the list of property names of a primitive.
+Donne la liste des noms de propriétés d'une primitive.
 
-<b>cURL command</b>
+<b>Commande cURL</b>
 
 `curl http://poppy.local:8080/init_position/properties/list.json`
 
-<b>Returned value</b>
+<b>Valeur de retour</b>
 
-Unfortunately, my primitives don't have any property.
+Malheureusement, mes primitives n'ont aucune propriété.
 
 ```json
 {
@@ -1993,39 +1991,39 @@ Unfortunately, my primitives don't have any property.
 
 - - -
 
-### Getting the value of a property of a primitive
+### Obtenir la valeur d'une propriété d'une primitive
 ```apache
 GET /primitives/<primitive_name>/properties/<prop>/value.json
 ```
 
 <b>Description</b>
 
-It would give the value of a property of a primitive.
+Cette requête donnerait la valeur d'une propriété d'un primitive.
 
-**⚠ This get request could not be tested because our primitives don't have any property ⚠**
+**⚠ Cette requête get n'a pas pu être testée car nos primitives n'ont aucune propriété ⚠**
 
-<b>cURL command</b>
+<b>Commande cURL</b>
 
 `curl http://poppy.local:8080/primitives/init_position/properties/<prop>/value.json`
 
-<b>Returned value</b>
+<b>Valeur de retour</b>
 
-Unfortunately, my primitives don't have any property.
+Malheureusement, mes primitives n'ont aucune propriété.
 
 - - -
 
-### Setting the value of a property of a primitive
+### Définir la valeur d'une propriété d'une primitive
 ```apache
 POST /primitives/<primitive_name>/properties/<prop>/value.json + new_value
 ```
 
 <b>Description</b>
 
-It would set the value of a property of a primitive.
+Cette requête modifierait la valeur d'une propriété d'une primitive.
 
-**⚠ This post request could not be tested because our primitives don't have any property ⚠**
+**⚠ Cette requête post n'a pas pu être testée car nos primitives n'ont aucune propriété ⚠**
 
-<b>cURL command</b>
+<b>Commande cURL</b>
 
 ```bash
 curl -X POST \
@@ -2033,26 +2031,26 @@ curl -X POST \
      -d 'new_value' \
      http://poppy.local:8080/primitives/init_position/properties/<prop>/value.json
 ```
-<b>Returned value</b>
+<b>Valeur de retour</b>
 
-Unfortunately, my primitives don't have any property.
+Malheureusement, mes primitives n'ont aucune propriété.
 
 - - -
 
-### Getting the list of all methods of a primitive
+### Obtenir la liste de toutes les méthodes d'une primitive
 ```apache
 GET /primitives/<primitive_name>/methods/list.json
 ```
 
 <b>Description</b>
 
-Gives the list of methods names of a primitive.
+Donne la liste des noms des méthodes d'une primitive.
 
-<b>cURL command</b>
+<b>Commande cURL</b>
 
 `curl http://poppy.local:8080/primitives/init_position/methods/list.json`
 
-<b>Returned value</b>
+<b>Valeur de retour</b>
 
 ```json
 {
@@ -2068,19 +2066,18 @@ Gives the list of methods names of a primitive.
 
 - - -
 
-### Calling a method of a primitive with arguments
+### Appeler une méthode d'une primitive avec des arguments
 ```apache
 POST /primitives/<primitive_name>/methods/<method_name>/args.json
 ```
 
 <b>Description</b>
 
-Calls a method of a primitive with optionnal arguments. Unfortunately, currently our primitives don't have methods with optionnal arguments.
+Appelle une méthode d'une primitive avec des arguments optionnels. Malheureusement, nos primitives actuelles n'ont pas de méthodes acceptant des arguments optionnels.
  
+<b>Exemple d'une commande cURL (non testée)</b>
 
-<b>cURL command example (not tested)</b>
-
-Assuming that the start method of the init_position primitive can take optional arguments, such as a speed (this is currently not the case).
+En supposant que la méthode `start` de la primitive `init_position` puisse prendre des arguments optionnels, comme une vitesse (ce n'est actuellement pas le cas).
 
 ```bash
 curl -X POST \
@@ -2089,12 +2086,12 @@ curl -X POST \
      http://poppy.local:8080/primitives/init_position/methods/speed/args.json
 ```
 
-<b>Returned value</b>
+<b>Valeur de retour</b>
 
-Previous example will return an error, because start method cannot take optionnal arguments.
+L'exemple précédent renverra une erreur, car la méthode `start` ne peut pas prendre d'arguments optionnels.
 
-But if it was the case, it would give an answer like :
+Mais si c'était le cas, cela donnerait une réponse comme :
 ```json
 {"init_position:start": 1.0}
 ``` 
-As 1.0 being the return value of start function. Currently, start function doesn't return anything. 
+Avec 1.0 étant la valeur de retour de la méthode `start`. Actuellement, la méthode `start` ne renvoie rien. 

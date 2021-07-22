@@ -1404,8 +1404,7 @@ Returns the following error:
 {
     "error": "Either sensor 'camera' or register 'fps' does not exist. Or you want to change a read-only register value",
     "tip": "You can find the list of sensors with /sensors/list.json and their registers with /sensors/<sensor_name>/registers/list.json",
-   
-: "can't set attribute"
+    "details" : "can't set attribute"
 }
 ```
 
@@ -1687,7 +1686,7 @@ Motor names in the body are optional. If your body is empty, it will by default 
 
 ⚠ If a move of the same name has already been defined, it will be overwritten !
 
-<b>cURL command example example</b>
+<b>cURL command example</b>
 ```bash
 curl -X POST \
      -H 'Content-Type: application/json' \
@@ -1906,7 +1905,7 @@ GET /primitives/<primitive_name>/stop.json
 
 <b>Description</b>
 
-Stops a previously running primitive.
+Stops a running primitive.
 
 <b>cURL command example</b>
 
@@ -1929,7 +1928,7 @@ GET /primitives/<primitive_name>/pause.json
 
 <b>Description</b>
 
-Pauses a previously running primitive.
+Pauses a running primitive.
 
 <b>cURL command example</b>
 
@@ -2080,7 +2079,7 @@ Calls a method of a primitive with optionnal arguments. Unfortunately, currently
 
 <b>cURL command example (not tested)</b>
 
-Assuming that the start method of the init_position primitive can take optional arguments, such as a speed (this is currently not the case).
+Assuming that the `start` method of the `init_position` primitive can take optional arguments, such as a speed (this is currently not the case).
 
 ```bash
 curl -X POST \
@@ -2091,10 +2090,10 @@ curl -X POST \
 
 <b>Returned value</b>
 
-Previous example will return an error, because start method cannot take optionnal arguments.
+Previous example will return an error, because `start` method cannot take optionnal arguments.
 
 But if it was the case, it would give an answer like :
 ```json
 {"init_position:start": 1.0}
 ``` 
-As 1.0 being the return value of start function. Currently, start function doesn't return anything. 
+As 1.0 being the return value of `start` function. Currently, `start` function doesn't return anything. 
