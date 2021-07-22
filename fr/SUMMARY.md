@@ -14,6 +14,7 @@
 
 * [Programmation](programming/README.md)
     * [Programmation avec Snap!](programming/snap.md)
+    * [Programming with Scratch](programming/scratch.md)
     * [Utilisation des notebooks Jupyter](programming/notebooks.md)
     * [Programmation en Python](programming/python.md)
     * [API des robots](programming/rest.md)
