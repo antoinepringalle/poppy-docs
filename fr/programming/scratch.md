@@ -4,11 +4,11 @@ Scratch est un langage de programmation visuel et [open source](https://github.c
 
 ![main_menu_scratch](../img/scratch/main_menu_scratch.png)
 
-> **Info** Vous pouvez trouver beaucoup d'idées de programmation et de tutoriels sur [site Web de Scratch](https://scratch.mit.edu/ideas)
+> **Info** Vous pouvez trouver quelques idées de programmation ou de tutoriels sur le [site Web de Scratch](https://scratch.mit.edu/ideas)
 
 ## Introduction à la programmation Scratch
 
-Ce chapitre se concentrera sur les choses nécessaires à comprendre dans Scratch pour utiliser les robots Poppy.
+Ce chapitre se concentrera sur les choses nécessaires à comprendre pour pouvoir contrôler vos robots avec Scratch.
 
 ### Connectez votre robot à Scratch
 
@@ -34,7 +34,7 @@ Cliquez sur le lien "Programmation" puis sur **Scratch** pour ouvrir l'interface
 
 - Commencez par ouvrir CoppeliaSim.
 
-- Le moyen le plus rapide est d'utiliser l'utilitaire de ligne de commande [poppy-service](../software-libraries/poppy-creature.md#poppy-services). Copiez et appuyez sur Entrée pour exécuter la commande ci-dessous dans votre invite de commande (Windows) ou votre terminal (OSX et Linux):
+- Le moyen le plus rapide est d'utiliser l'utilitaire de ligne de commande [poppy-service](../software-libraries/poppy-creature.md#poppy-services). Copiez-collez et appuyez sur Entrée pour exécuter la commande ci-dessous dans votre invite de commande (Windows) ou votre terminal (OSX et Linux):
 ```bash
 poppy-services --scratch --vrep poppy-ergo-jr
 ```
@@ -48,9 +48,9 @@ Cliquez sur ![bouton ajouter une extension](../img/scratch/INTERFACE_addExtensio
 
 ![extension](../img/scratch/INTERFACE_extension.png)
 
-De nouveaux blocs apparaîtra sur le panneau de gauche.
+De nouveaux blocs apparaîtront sur le panneau de gauche.
 
-![blocs coquelicots](../img/scratch/INTERFACE_blocks.png)
+![blocs poppy](../img/scratch/INTERFACE_blocks.png)
 
 ## Description des blocs Poppy
 
@@ -89,7 +89,7 @@ De nouveaux blocs apparaîtra sur le panneau de gauche.
 Ce programme mettra tous vos moteurs en mode mou dès que vous appuierez sur votre touche **c**.
 ![EXEMPLES_compliant](../img/scratch/EXAMPLES_compliant.png)
 
-> **info** Le contraire de mou est rigide. Les moteurs seront verrouillés dans leur position actuelle, mais ils peuvent recevoir des commandes telles que goto.
+> **info** L'opposé du mode mou est le mode rigide. Les moteurs seront verrouillés dans leur position actuelle, mais ils peuvent recevoir des commandes telles que goto.
 
 ### Ouvrez et fermez votre effecteur.
 
